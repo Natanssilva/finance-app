@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
 </head>
-
+<?php require_once 'connect.php' ?>
 <body class="bg-gray-800 min-h-screen flex items-center justify-center">
     <div class="bg-white p-8 rounded shadow-md sm:w-96 animate__animated animate__backInRight ">
         <h2 class="text-2xl font-bold mb-4">Cadastre-se</h2>
@@ -25,10 +25,10 @@
                 <input type="email" id="email" name="email" class="border rounded w-full py-2 px-3" placeholder="seuemail@example.com">
             </div>
             <div class="mb-6">
-                <label for "senha" class="block text-gray-700 text-sm font-semibold mb-2">Senha</label>
+                <label for= "senha" class="block text-gray-700 text-sm font-semibold mb-2">Senha</label>
                 <input type="password" id="senha" name="senha" class="border rounded w-full py-2 px-3" placeholder="********">
             </div>
-            <button type="submit" class="bg-blue-500 text-white rounded w-full py-2">Entrar</button>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-full py-2">Entrar</button>
         </form>
         <div class="mt-4">
             <p class="text-gray-600">Já possui uma conta? <a href="index.php" class="text-blue-500">Fazer login</a></p>
