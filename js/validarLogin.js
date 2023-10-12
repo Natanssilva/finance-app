@@ -1,5 +1,6 @@
 
-let form = document.querySelector('#form').addEventListener('submit',function enviarForm(event){
+let form = document.querySelector('form').addEventListener('submit',function enviarForm(event){
+
     let InputEmail = document.getElementById('email');
     let InputSenha = document.getElementById('senha');
 
@@ -9,6 +10,7 @@ let form = document.querySelector('#form').addEventListener('submit',function en
 
     //error.innerHTML = '';
 
+    //validando login 
     if (email.trim() === '' || email.length <=4 ) {
         event.preventDefault();
         InputEmail.style.border = "1px solid red";
@@ -29,8 +31,15 @@ let form = document.querySelector('#form').addEventListener('submit',function en
         InputSenha.parentElement.querySelector('.error-message').textContent = '';
     }
 
+   
+
+    
    //solicitação ajax pra verificar com servidor
 
-   
+    return true;
    
 })
+
+
+
+

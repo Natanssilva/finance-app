@@ -6,7 +6,7 @@
     <title>Tela de Login</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <script src="validarLogin.js" defer></script>
+    <script src="./js/validarLogin.js" defer></script>
 </head>
 <?php require_once 'connect.php' ?>
 <body class="bg-gray-800 min-h-screen flex items-center justify-center">
@@ -30,6 +30,8 @@
         </div>
     </div>
 
-    <h1 class="text-2xl text-white text-center absolute top-10 w-full animate__animated animate__backInRight ">Seja bem-vindo ao Finance App, o lugar certo para suas finanças !</h1>
+  
+        <h1 class="text-2xl text-white text-center absolute top-10 w-full animate__animated animate__backInRight ">Seja bem-vindo ao Finance App, o lugar certo para suas finanças !</h1>
+
 </body>
 </html>
