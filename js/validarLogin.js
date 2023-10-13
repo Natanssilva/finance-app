@@ -7,11 +7,12 @@ let form = document.querySelector('form').addEventListener('submit',function env
     let email = InputEmail.value;
     let senha = InputSenha.value;
     let erro = document.querySelector('.error-message');
+    const regexLogin = /[,\;!?\[\]{}()#$%^&*]/;
 
-    //error.innerHTML = '';
+   
 
     //validando login 
-    if (email.trim() === '' || email.length <=4 ) {
+    if (email.trim() === '' || email.length <=4 || regexLogin.test(email)) {
         event.preventDefault();
         InputEmail.style.border = "1px solid red";
         erro.textContent = 'ERRO! Digite um email válido';

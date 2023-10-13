@@ -7,6 +7,9 @@ let formCadastro = document.querySelector('#formCadastro').addEventListener('sub
     let inputSenhaCadastro = document.querySelector('#senhaCadastro');
     let SenhaCadastro = inputSenhaCadastro.value;
 
+    const regexComSimbolos = /[,\;!?\[\]{}()#$%^&*]/;
+
+
     if (nome.trim() == '' || nome.length <= 2) {
         evento.preventDefault();
         inputNome.style.border = "1px solid red";
@@ -16,7 +19,7 @@ let formCadastro = document.querySelector('#formCadastro').addEventListener('sub
         inputNome.parentElement.querySelector('.error-message').textContent = '';
     }
 
-    if (emailCadastro.trim() == '' || emailCadastro.length <= 4) {
+    if (emailCadastro.trim() == '' || emailCadastro.length <= 4 || regexComSimbolos.test(emailCadastro)) {
         evento.preventDefault();
         InputemailCadastro.style.border = "1px solid red";
         InputemailCadastro.parentElement.querySelector('.error-message').textContent = 'ERRO! Digite um email válido';

@@ -12,7 +12,7 @@
 <body class="bg-gray-800 min-h-screen flex items-center justify-center">
     <div class="bg-white p-8 rounded shadow-md sm:w-96 animate__animated animate__backInRight ">
         <h2 class="text-2xl font-bold mb-4">Login</h2>
-        <form id="form">
+        <form id="form" action="teste.php" method="post">
             <div class="mb-4">
                 <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
                 <input type="email" id="email" name="email" class="border rounded w-full py-2 px-3" placeholder="seuemail@example.com">
