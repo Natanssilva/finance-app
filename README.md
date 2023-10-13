@@ -2,5 +2,8 @@
 Esse projeto servirá pra estudar e consolidar conhecimentos em MySQL, PHP, javascript e Tailwind CSS.
 
 
-PROXIMO PASSO :
-- Validar cadastro e inserir no banco de dados  
+- ROADMAP DO PROJETO:
+    - Login e cadastro de usuários em um banco de dados
+    - Validação Client-Side e Server-Side
+    - DashBoards e gráficos
+    - Design Responsivo
