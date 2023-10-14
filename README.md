@@ -7,6 +7,7 @@ Esse projeto servirá pra estudar e consolidar conhecimentos em MySQL, PHP, java
     - Validação Client-Side e Server-Side
     - DashBoards e gráficos
     - Design Responsivo
+    - Animações 
 
 
 # Tecnologias usadas no projeto 
