@@ -11,7 +11,7 @@
 <?php require_once 'connect.php' ?>
 <body class="bg-gray-800 min-h-screen flex items-center justify-center">
     <div class="bg-white p-8 rounded shadow-md sm:w-96 animate__animated animate__backInRight ">
-        <h2 class="text-2xl font-bold mb-4">Cadastre-se</h2>
+        <h2 class="text-2xl font-bold mb-4 text-center">Cadastre-se</h2>
         <form id="formCadastro">
             <div class="mb-2">
                     <label for="nome" class="block text-gray-700 text-sm font-semibold mb-2">Nome</label>
@@ -39,6 +39,6 @@
         </div>
     </div>
 
-    <h1 class="text-2xl text-white text-center absolute top-20 w-full animate__animated animate__backInRight ">Crie uma conta e comece agora mesmo a gerenciar suas finanças !</h1>
+    <h1 class="text-2xl text-white text-center absolute top-10 w-full animate__animated animate__backInRight ">Crie uma conta e comece agora mesmo a gerenciar suas finanças !</h1>
 </body>
 </html>

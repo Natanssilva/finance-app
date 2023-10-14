@@ -10,8 +10,8 @@
 </head>
 <?php require_once 'connect.php' ?>
 <body class="bg-gray-800 min-h-screen flex items-center justify-center">
-    <div class="bg-white p-8 rounded shadow-md sm:w-96 animate__animated animate__backInRight ">
-        <h2 class="text-2xl font-bold mb-4">Login</h2>
+    <div class="bg-white p-8 rounded shadow-md sm:w-96 animate__animated animate__backInRight mx-auto">
+        <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
         <form id="form" action="teste.php" method="post">
             <div class="mb-4">
                 <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
@@ -23,7 +23,9 @@
                 <input type="password" id="senha" name="senha" class="border rounded w-full py-2 px-3" placeholder="********">
                 <p class="error-message text-red-700"></p>
             </div>
-            <button type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-full py-2">Entrar</button>
+            <div class="text-center">
+            <button id="button-submit" type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-full py-2">Entrar</button>
+            </div>
         </form>
         <div class="mt-4">
             <p class="text-gray-600">Novo por aqui? <a href="cadastro.php" class="text-blue-500">Crie uma conta agora</a></p>
@@ -32,6 +34,6 @@
 
   
         <h1 class="text-2xl text-white text-center absolute top-10 w-full animate__animated animate__backInRight ">Seja bem-vindo ao Finance App, o lugar certo para suas finanças !</h1>
-
+        
 </body>
 </html>

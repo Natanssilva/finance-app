@@ -19,5 +19,5 @@ try {
 
 } catch (PDOException  $statusConnect) {
     echo "erro ao conectar ao db " . $statusConnect ->getMessage();
-    
+    die();
 }
