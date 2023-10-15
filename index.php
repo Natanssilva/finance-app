@@ -12,7 +12,7 @@
 <body class="bg-gray-800 min-h-screen flex items-center justify-center">
     <div class="bg-white p-8 rounded shadow-md sm:w-96 animate__animated animate__backInRight mx-auto">
         <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
-        <form id="form" action="teste.php" method="post">
+        <form id="form" action="processar_login.php" method="post">
             <div class="mb-4">
                 <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
                 <input type="email" id="email" name="email" class="border rounded w-full py-2 px-3" placeholder="seuemail@example.com">
@@ -25,6 +25,7 @@
             </div>
             <div class="text-center">
             <button id="button-submit" type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-full py-2">Entrar</button>
+            <p class="erro-login text-red-700"></p>
             </div>
         </form>
         <div class="mt-4">

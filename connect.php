@@ -21,3 +21,12 @@ try {
     echo "erro ao conectar ao db " . $statusConnect ->getMessage();
     die();
 }
+
+function showArray($array)
+{
+    echo "<pre>";
+
+    print_r($array);
+
+    echo "</pre>";
+}

@@ -32,7 +32,7 @@
                 <input type="password" id="senhaCadastro" name="senha" class="border rounded w-full py-2 px-3" placeholder="********">
                 <p class="error-message text-red-700"></p>
             </div>
-            <button type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-full py-2">Entrar</button>
+            <button id="buttonCadastro" type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-full py-2">Entrar</button>
         </form>
         <div class="mt-4">
             <p class="text-gray-600">Já possui uma conta? <a href="index.php" class="text-blue-500">Fazer login</a></p>

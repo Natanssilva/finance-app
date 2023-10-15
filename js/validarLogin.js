@@ -1,12 +1,10 @@
 
-let formSubmitted = false; // variavel que controla se o form foi enviado
+
 
 let form = document.querySelector('form').addEventListener('submit', function enviarForm(event) {
   event.preventDefault(); // Pausa o evento de envio
 
-  if (formSubmitted) {
-    return; // Se o formulário já foi enviado, não faça nada
-  }
+  
 
   const buttonLogin = document.querySelector('#button-submit');
   let InputEmail = document.getElementById('email');
@@ -15,6 +13,7 @@ let form = document.querySelector('form').addEventListener('submit', function en
   let email = InputEmail.value;
   let senha = InputSenha.value;
   let erro = document.querySelector('.error-message');
+  let erroLogin = document.querySelector('.erro-login');
   const regexLogin = /[,\;!?\[\]{}()#$%^&*]/;
 
   // Validando login
@@ -44,16 +43,32 @@ let form = document.querySelector('form').addEventListener('submit', function en
    
     </svg>`;
 
-    setTimeout(function removerAnimação() { //função callback, ou seja uma função passada como argumento
-      // tirando a animação
-      buttonLogin.innerHTML = 'Enviar';
-      buttonLogin.removeAttribute('disabled');
+    fetch('processar_login.php',{
+      method: 'POST',
+      body: new URLSearchParams(new FormData(document.querySelector('form')))    //pegar os dados do form
+    })
 
-      //form enviado
-      formSubmitted = true;
+    .then(response => response.json())
+    .then(data => {
+      if (data.status == 'true') {
+          setTimeout(function removerAnimação() { //função callback, ou seja uma função passada como argumento
+            // tirando a animação
+            buttonLogin.innerHTML = 'Enviar';
+            buttonLogin.removeAttribute('disabled');
 
-      // Enviar o formulário
-      document.querySelector('form').submit();
-    }, 2000);
-  }
-});
+            // Enviar o formulário
+            document.querySelector('form').submit();
+          }, 2800);
+      } else {
+        event.preventDefault();
+        buttonLogin.innerHTML = 'Enviar';
+        buttonLogin.removeAttribute('disabled');
+        erroLogin.innerHTML = 'Login incorreto. Tente Novamente';
+      }
+
+    });
+
+
+    
+  } 
+})
