@@ -7,9 +7,10 @@ let formCadastro = document.querySelector('#formCadastro').addEventListener('sub
     let nome = inputNome.value;
     let InputemailCadastro = document.querySelector('#emailCadastro');
     let emailCadastro = InputemailCadastro.value;
-
+    let erroCadastro = document.querySelector('.cadastro-error');
     let inputSenhaCadastro = document.querySelector('#senhaCadastro');
     let SenhaCadastro = inputSenhaCadastro.value;
+    let sobrenome = document.querySelector('#sobrenome');
 
     const regexComSimbolos = /[,\;!?\[\]{}()#$%^&*]/;
 
@@ -50,13 +51,30 @@ let formCadastro = document.querySelector('#formCadastro').addEventListener('sub
             </svg>
         `;
 
-        setTimeout(function removerAnimação(){
+        fetch('processar_cadastro.php',{
+            method: 'POST',
+            body: new URLSearchParams(new FormData(document.querySelector('#formCadastro')))    //pegar os dados do form
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status == 'true') {
+                setTimeout(function removerAnimação(){
             
-            buttonCadastro.innerHTML = 'ENVIAR';
-            buttonCadastro.removeAttribute('disabled');
+                    buttonCadastro.innerHTML = 'ENVIAR';
+                    buttonCadastro.removeAttribute('disabled');
+        
+                    document.querySelector('#formCadastro').submit();
+                    window.location.href(data.redirect)
+                }, 2800)
+            }else{
+                evento.preventDefault();
+                buttonCadastro.innerHTML = 'ENVIAR';
+                buttonCadastro.removeAttribute('disabled');
+                erroCadastro.innerHTML = 'Cadastro mal sucedido!';
+            }
+        })
 
-            document.querySelector('#formCadastro').submit();
-        }, 2500)
+       
     }
 
 

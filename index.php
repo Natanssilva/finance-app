@@ -15,7 +15,7 @@
         <form id="form" action="processar_login.php" method="post">
             <div class="mb-4">
                 <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
-                <input type="email" id="email" name="email" class="border rounded w-full py-2 px-3" placeholder="seuemail@example.com">
+                <input type="email" id="email" name="email" class="border rounded w-full py-2 px-3" placeholder="seuemail@exemplo.com">
                 <p class="error-message text-red-700"></p>
             </div>
             <div class="mb-6">

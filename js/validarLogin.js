@@ -1,7 +1,7 @@
 
 
 
-let form = document.querySelector('form').addEventListener('submit', function enviarForm(event) {
+let form = document.querySelector('#form').addEventListener('submit', function enviarForm(event) {
   event.preventDefault(); // Pausa o evento de envio
 
   
@@ -45,7 +45,7 @@ let form = document.querySelector('form').addEventListener('submit', function en
 
     fetch('processar_login.php',{
       method: 'POST',
-      body: new URLSearchParams(new FormData(document.querySelector('form')))    //pegar os dados do form
+      body: new URLSearchParams(new FormData(document.querySelector('#form')))    //pegar os dados do form
     })
 
     .then(response => response.json())
@@ -57,7 +57,9 @@ let form = document.querySelector('form').addEventListener('submit', function en
             buttonLogin.removeAttribute('disabled');
 
             // Enviar o formulário
-            document.querySelector('form').submit();
+            document.querySelector('#form').submit();
+            window.location.href = data.redirect; //redirecionando pra home (página do usuario)
+
           }, 2800);
       } else {
         event.preventDefault();

@@ -25,9 +25,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($loginEfetuado) {
         $response = [
             'status' => 'true',
-            'message' => 'login efetuado com sucesso'
+            'message' => 'login efetuado com sucesso',
+            'redirect' => 'home.php'
         ];
 
+        
     }else{
         $response = [
             'status' => 'false',
@@ -36,4 +38,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     echo json_encode($response);
+   
 }

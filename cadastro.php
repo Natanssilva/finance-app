@@ -12,7 +12,7 @@
 <body class="bg-gray-800 min-h-screen flex items-center justify-center">
     <div class="bg-white p-8 rounded shadow-md sm:w-96 animate__animated animate__backInRight ">
         <h2 class="text-2xl font-bold mb-4 text-center">Cadastre-se</h2>
-        <form id="formCadastro">
+        <form id="formCadastro" action="processar_cadastro.php">
             <div class="mb-2">
                     <label for="nome" class="block text-gray-700 text-sm font-semibold mb-2">Nome</label>
                     <input type="text" id="nome" name="nome" class="border rounded w-full py-2 px-3" placeholder="Digite seu nome">
@@ -24,7 +24,7 @@
             </div>
             <div class="mb-4">
                 <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
-                <input type="email" id="emailCadastro" name="email" class="border rounded w-full py-2 px-3" placeholder="seuemail@example.com">
+                <input type="email" id="emailCadastro" name="email" class="border rounded w-full py-2 px-3" placeholder="seuemail@exemplo.com">
                 <p class="error-message text-red-700"></p>
             </div>
             <div class="mb-6">
@@ -32,7 +32,8 @@
                 <input type="password" id="senhaCadastro" name="senha" class="border rounded w-full py-2 px-3" placeholder="********">
                 <p class="error-message text-red-700"></p>
             </div>
-            <button id="buttonCadastro" type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-full py-2">Entrar</button>
+            <button id="buttonCadastro" type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-full py-2">Cadastrar</button>
+            <p class="cadastro-error text-red-700"></p>
         </form>
         <div class="mt-4">
             <p class="text-gray-600">Já possui uma conta? <a href="index.php" class="text-blue-500">Fazer login</a></p>
