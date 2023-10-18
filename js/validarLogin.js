@@ -18,7 +18,7 @@ let form = document.querySelector('#form').addEventListener('submit', function e
 
   // Validando login
   if (email.trim() === '' || email.length <= 4 || regexLogin.test(email)) {
-    event.preventDefault();
+
     InputEmail.style.border = "1px solid red";
     erro.textContent = 'ERRO! Email inválido';
   } else {
@@ -27,7 +27,7 @@ let form = document.querySelector('#form').addEventListener('submit', function e
   }
 
   if (senha.trim() === '' || senha.length <= 2) {
-    event.preventDefault();
+
     InputSenha.style.border = "1px solid red";
     InputSenha.parentElement.querySelector('.error-message').textContent = 'ERRO! Digite uma senha válida';
   } else {
@@ -49,20 +49,21 @@ let form = document.querySelector('#form').addEventListener('submit', function e
     })
 
     .then(response => response.json())
-    .then(data => {
-      if (data.status == 'true') {
+    .then(response => {
+      if (response.status == 'true') {
+ 
           setTimeout(function removerAnimação() { //função callback, ou seja uma função passada como argumento
             // tirando a animação
             buttonLogin.innerHTML = 'Enviar';
             buttonLogin.removeAttribute('disabled');
 
             // Enviar o formulário
+            
             document.querySelector('#form').submit();
-            window.location.href = data.redirect; //redirecionando pra home (página do usuario)
+            window.location.href = response.redirect; //redirecionando pra home (página do usuario)
 
           }, 2800);
       } else {
-        event.preventDefault();
         buttonLogin.innerHTML = 'Enviar';
         buttonLogin.removeAttribute('disabled');
         erroLogin.innerHTML = 'Login incorreto. Tente Novamente';

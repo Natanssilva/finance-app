@@ -15,21 +15,21 @@
         <form id="formCadastro" action="processar_cadastro.php">
             <div class="mb-2">
                     <label for="nome" class="block text-gray-700 text-sm font-semibold mb-2">Nome</label>
-                    <input type="text" id="nome" name="nome" class="border rounded w-full py-2 px-3" placeholder="Digite seu nome">
+                    <input type="text" id="nome" name="nomeCadastro" class="border rounded w-full py-2 px-3" placeholder="Digite seu nome">
                     <p class="error-message text-red-700"></p>
             </div>
             <div class="mb-2">
                     <label for="sobrenome" class="block text-gray-700 text-sm font-semibold mb-2">Sobrenome</label>
-                    <input type="text" id="sobrenome" name="sobrenome" class="border rounded w-full py-2 px-3" placeholder="Digite seu sobrenome">
+                    <input type="text" id="sobrenome" name="sobrenomeCadastro" class="border rounded w-full py-2 px-3" placeholder="Digite seu sobrenome">
             </div>
             <div class="mb-4">
                 <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
-                <input type="email" id="emailCadastro" name="email" class="border rounded w-full py-2 px-3" placeholder="seuemail@exemplo.com">
+                <input type="email" id="emailCadastro" name="emailCadastro" class="border rounded w-full py-2 px-3" placeholder="seuemail@exemplo.com">
                 <p class="error-message text-red-700"></p>
             </div>
             <div class="mb-6">
                 <label for= "senha" class="block text-gray-700 text-sm font-semibold mb-2">Senha</label>
-                <input type="password" id="senhaCadastro" name="senha" class="border rounded w-full py-2 px-3" placeholder="********">
+                <input type="password" id="senhaCadastro" name="senhaCadastro" class="border rounded w-full py-2 px-3" placeholder="********">
                 <p class="error-message text-red-700"></p>
             </div>
             <button id="buttonCadastro" type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-full py-2">Cadastrar</button>

@@ -1,22 +1,26 @@
-let formSubmited = false
-let formCadastro = document.querySelector('#formCadastro').addEventListener('submit', function formCadastro(evento){
+
+let formCadastro = document.querySelector('#formCadastro').addEventListener('submit', function enviarCadastro(evento){
     evento.preventDefault();
 
-    const buttonCadastro = document.querySelector('#buttonCadastro');
-    let inputNome = document.querySelector('#nome');
-    let nome = inputNome.value;
-    let InputemailCadastro = document.querySelector('#emailCadastro');
-    let emailCadastro = InputemailCadastro.value;
     let erroCadastro = document.querySelector('.cadastro-error');
+    const buttonCadastro = document.querySelector('#buttonCadastro');
+    
+    let inputNome = document.querySelector('#nome');
+    let InputemailCadastro = document.querySelector('#emailCadastro');
     let inputSenhaCadastro = document.querySelector('#senhaCadastro');
-    let SenhaCadastro = inputSenhaCadastro.value;
     let sobrenome = document.querySelector('#sobrenome');
+
+    let nome = inputNome.value;
+    let sobrenomeCadastro = sobrenome.value;
+    let emailCadastro = InputemailCadastro.value;
+    let SenhaCadastro = inputSenhaCadastro.value;
+    
 
     const regexComSimbolos = /[,\;!?\[\]{}()#$%^&*]/;
 
 
     if (nome.trim() == '' || nome.length <= 2) {
-        evento.preventDefault();
+        
         inputNome.style.border = "1px solid red";
         inputNome.parentElement.querySelector('.error-message').textContent = 'ERRO! Digite um nome válido';
     } else {
@@ -25,7 +29,7 @@ let formCadastro = document.querySelector('#formCadastro').addEventListener('sub
     }
 
     if (emailCadastro.trim() == '' || emailCadastro.length <= 4 || regexComSimbolos.test(emailCadastro)) {
-        evento.preventDefault();
+       
         InputemailCadastro.style.border = "1px solid red";
         InputemailCadastro.parentElement.querySelector('.error-message').textContent = 'ERRO! Digite um email válido';
     } else {
@@ -34,7 +38,6 @@ let formCadastro = document.querySelector('#formCadastro').addEventListener('sub
     }
 
     if (SenhaCadastro.trim() === '' || SenhaCadastro.length <= 2 ) {
-        evento.preventDefault();
        
         inputSenhaCadastro.style.border = "1px solid red";
         inputSenhaCadastro.parentElement.querySelector('.error-message').textContent = 'ERRO! Digite uma senha válida';
@@ -43,7 +46,7 @@ let formCadastro = document.querySelector('#formCadastro').addEventListener('sub
         inputSenhaCadastro.parentElement.querySelector('.error-message').textContent = '';
     }
 
-    if (nome && emailCadastro && SenhaCadastro) {
+    if (nome.length > 2 && emailCadastro && SenhaCadastro) {
         buttonCadastro.setAttribute('disabled', 'true')
         buttonCadastro.innerHTML = `
             <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
@@ -56,18 +59,20 @@ let formCadastro = document.querySelector('#formCadastro').addEventListener('sub
             body: new URLSearchParams(new FormData(document.querySelector('#formCadastro')))    //pegar os dados do form
         })
         .then(response => response.json())
-        .then(data => {
-            if (data.status == 'true') {
+        .then(response => {
+            if (response.status == 'true') {
+             
                 setTimeout(function removerAnimação(){
             
                     buttonCadastro.innerHTML = 'ENVIAR';
                     buttonCadastro.removeAttribute('disabled');
         
-                    document.querySelector('#formCadastro').submit();
-                    window.location.href(data.redirect)
+                     document.querySelector('#formCadastro').submit();
+                    window.location.href = response.redirect;
                 }, 2800)
             }else{
-                evento.preventDefault();
+                
+                 evento.preventDefault();
                 buttonCadastro.innerHTML = 'ENVIAR';
                 buttonCadastro.removeAttribute('disabled');
                 erroCadastro.innerHTML = 'Cadastro mal sucedido!';
@@ -79,3 +84,5 @@ let formCadastro = document.querySelector('#formCadastro').addEventListener('sub
 
 
 })
+
+
