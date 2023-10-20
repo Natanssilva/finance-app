@@ -70,9 +70,8 @@ let formCadastro = document.querySelector('#formCadastro').addEventListener('sub
                      document.querySelector('#formCadastro').submit();
                     window.location.href = response.redirect;
                 }, 2800)
-            }else{
-                
-                 evento.preventDefault();
+            }else if(response.status == 'false'){
+             
                 buttonCadastro.innerHTML = 'ENVIAR';
                 buttonCadastro.removeAttribute('disabled');
                 erroCadastro.innerHTML = 'Cadastro mal sucedido!';

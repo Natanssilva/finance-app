@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     foreach ($tabela_usuarios as $info_usuario) {  //aqui vai mostrar tudo que tiver no db 
-        if ($info_usuario['email'] == $email && $info_usuario['senha'] == $senha) {
+        if ($info_usuario['email'] == $email && password_verify($senha,$info_usuario['senha'])) {
             $loginEfetuado = true;
             break;  //login efetuado, nao precisa continuar verificando
         }
