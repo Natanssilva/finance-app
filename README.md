@@ -13,3 +13,12 @@ Esse projeto servirá pra estudar e consolidar conhecimentos em MySQL, PHP, java
 # Tecnologias usadas no projeto 
     - No desenvolvimento : PHP, JS, HTML,CSS e MySQL
     - Versionamento de código: GIT 
+<<<<<<< HEAD
+=======
+
+
+# Features a serem implementadas ou Bugs para corrigir:
+    - Arrumar verificação com senha criptografada no login
+    - verificar validações
+    - Criar home do usuário
+>>>>>>> d2c5970379022a3fcaa074037e6aaf50fe743f70

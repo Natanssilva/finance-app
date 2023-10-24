@@ -37,6 +37,7 @@
         </form>
         <div class="mt-4">
             <p class="text-gray-600">Já possui uma conta? <a href="index.php" class="hover:underline text-blue-500">Fazer login</a></p>
+
         </div>
     </div>
 

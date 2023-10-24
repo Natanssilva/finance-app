@@ -10,14 +10,17 @@
 </head>
 <?php require_once 'connect.php' ?>
 <body class="bg-gray-800 min-h-screen flex items-center justify-center">
+
     <h1 class="text-2xl text-white text-center absolute top-10 w-full animate__animated animate__backInRight ">Seja bem-vindo ao Finance App, o lugar certo para suas finanças !</h1>
-        
+
     <div class="bg-white p-8 rounded shadow-md sm:w-96 animate__animated animate__backInRight mx-auto">
         <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
         <form id="form" action="processar_login.php" method="post">
             <div class="mb-4">
                 <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
+
                 <input type="email" id="email" name="email" class="border rounded w-full py-2 px-3" placeholder="seuemail@exemplo.com">
+
                 <p class="error-message text-red-700"></p>
             </div>
             <div class="mb-6">
