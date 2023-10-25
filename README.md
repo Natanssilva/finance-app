@@ -4,6 +4,7 @@ Esse projeto servirá pra estudar e consolidar conhecimentos em MySQL, PHP, java
 
 - ROADMAP DO PROJETO:
     - Login e cadastro de usuários em um banco de dados
+    - Utilização de API para logar e cadastrar com contas de outras plataformas como Google e Github
     - Validação Client-Side e Server-Side
     - DashBoards e gráficos
     - Design Responsivo
