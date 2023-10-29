@@ -65,7 +65,7 @@ let formCadastro = document.querySelector('#formCadastro').addEventListener('sub
         .then(response => response.json())
         .then(response => {
             if (response.status == 'true') {
-                console.log(response);
+ 
                 setTimeout(function removerAnimação(){
             
                     buttonCadastro.innerHTML = 'ENVIAR';

@@ -6,7 +6,7 @@
     <title>Finance App</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <script src="./js/validarLogin.js" defer></script>
+    <script src="../js/validarLogin.js" defer></script>
 </head>
 <?php require_once 'connect.php' ?>
 <body class="bg-gray-800 min-h-screen flex items-center justify-center">
