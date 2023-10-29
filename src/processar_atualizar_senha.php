@@ -4,13 +4,14 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $dadosAtualizarSenha = filter_input_array(INPUT_POST,FILTER_DEFAULT); //recebendo os dados de envio do formulario via post
+     
         $senhaAtualizada = $dadosAtualizarSenha['SenhaAtualizada'];
-        showArray($senhaAtualizada);
+      
 
         //receber a chave de recuperação via post pelo AJAX
       if (isset($_POST['chave'])) {
             $chave_recuperacao = $_POST['chave'];
-            showArray($chave_recuperacao);
+            
 
             if (empty($chave_recuperacao)) {
     
@@ -30,8 +31,22 @@
 
                 $resultado_verificar_chave = $stmt -> fetch();
 
-                showArray($query_verificar_chave_recuperacao);
+                //update nova senha (BUG)
+               if ($dadosAtualizarSenha) {
+                    $senhaAtualizada = password_hash($dadosAtualizarSenha['SenhaAtualizada'], PASSWORD_DEFAULT);
+                    $id_user = $resultado_verificar_chave['id_user'];
+                   
+                    $query_update_senha = "UPDATE usuarios 
+                                           SET senha = :senha_usuario 
+                                           WHERE id = :id_user LIMIT 1;";
+                    
+                    $preparedStmt = $ligacao->prepare($query_update_senha);
+                    $preparedStmt->bindParam(':senha_usuario', $senhaAtualizada);
+                    $preparedStmt->bindParam(':id_user', $id_user);
+                    $preparedStmt ->execute();
+               }
 
+                
 
                 $response = [
                     'status' => 'true',

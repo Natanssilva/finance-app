@@ -45,7 +45,7 @@ let formRecupSenha = document.querySelector('#formRecup').addEventListener('subm
         
                      document.querySelector('#formRecup').submit();
                     window.location.href = response.redirect;
-                }, 2400)
+                }, 2000)
             }else if(response.status == 'false'){
              
                 buttonRecup.innerHTML = 'ENVIAR';

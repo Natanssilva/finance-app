@@ -25,7 +25,7 @@
             $stmt->bindParam(':id_user', $dadosRecupSenha['id_user']);
             $resultado_recuperar_senha = $stmt->execute();
 
-            showArray($query_chave_recuperar_senha);
+          
 
             
             if ($resultado_recuperar_senha) {
