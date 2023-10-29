@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Login</title>
+    <title>Finance App</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <script src="./js/validarLogin.js" defer></script>
@@ -34,16 +34,12 @@
             </div>
         </form>
         <div class="container mx-auto px-2 mt-2">
-            <a class="hover:underline text-blue-500" href="#">Esqueceu a senha?</a>
+            <a class="hover:underline text-blue-500" href="recuperar_senha.php">Esqueceu a senha?</a>
         </div>
         <div class="mt-4">
             <p class="text-gray-600 px-2 ">Novo por aqui? <a  href="cadastro.php" class="hover:underline text-blue-500">Crie uma conta agora</a></p>
         </div>
         
     </div>
-    
-
-  
-       
 </body>
 </html>

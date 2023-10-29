@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 let formCadastro = document.querySelector('#formCadastro').addEventListener('submit', function enviarCadastro(evento){
     evento.preventDefault();
@@ -15,76 +15,42 @@ let formCadastro = document.querySelector('#formCadastro').addEventListener('sub
     let sobrenomeCadastro = sobrenome.value;
     let emailCadastro = InputemailCadastro.value;
     let SenhaCadastro = inputSenhaCadastro.value;
-    
-=======
-let formSubmited = false
-let formCadastro = document.querySelector('#formCadastro').addEventListener('submit', function formCadastro(evento){
-    evento.preventDefault();
-
-    const buttonCadastro = document.querySelector('#buttonCadastro');
-    let inputNome = document.querySelector('#nome');
-    let nome = inputNome.value;
-    let InputemailCadastro = document.querySelector('#emailCadastro');
-    let emailCadastro = InputemailCadastro.value;
-
-    let inputSenhaCadastro = document.querySelector('#senhaCadastro');
-    let SenhaCadastro = inputSenhaCadastro.value;
->>>>>>> d2c5970379022a3fcaa074037e6aaf50fe743f70
 
     const regexComSimbolos = /[,\;!?\[\]{}()#$%^&*]/;
 
 
     if (nome.trim() == '' || nome.length <= 2) {
-<<<<<<< HEAD
-        
         inputNome.style.border = "1px solid red";
         inputNome.parentElement.querySelector('.error-message').textContent = 'Digite um nome válido';
-=======
-        evento.preventDefault();
-        inputNome.style.border = "1px solid red";
-        inputNome.parentElement.querySelector('.error-message').textContent = 'ERRO! Digite um nome válido';
->>>>>>> d2c5970379022a3fcaa074037e6aaf50fe743f70
+
     } else {
         inputNome.style.border = "";
         inputNome.parentElement.querySelector('.error-message').textContent = '';
     }
 
-    if (emailCadastro.trim() == '' || emailCadastro.length <= 4 || regexComSimbolos.test(emailCadastro)) {
-<<<<<<< HEAD
-       
+    if (emailCadastro.trim() == '' || emailCadastro.length <= 4 || regexComSimbolos.test(emailCadastro)) {       
         InputemailCadastro.style.border = "1px solid red";
         InputemailCadastro.parentElement.querySelector('.error-message').textContent = 'Digite um email válido';
-=======
-        evento.preventDefault();
-        InputemailCadastro.style.border = "1px solid red";
-        InputemailCadastro.parentElement.querySelector('.error-message').textContent = 'ERRO! Digite um email válido';
->>>>>>> d2c5970379022a3fcaa074037e6aaf50fe743f70
+
     } else {
         InputemailCadastro.style.border = "";
         InputemailCadastro.parentElement.querySelector('.error-message').textContent = '';
     }
 
     if (SenhaCadastro.trim() === '' || SenhaCadastro.length <= 2 ) {
-<<<<<<< HEAD
        
         inputSenhaCadastro.style.border = "1px solid red";
         inputSenhaCadastro.parentElement.querySelector('.error-message').textContent = 'Digite uma senha válida';
-=======
-        evento.preventDefault();
-       
-        inputSenhaCadastro.style.border = "1px solid red";
-        inputSenhaCadastro.parentElement.querySelector('.error-message').textContent = 'ERRO! Digite uma senha válida';
->>>>>>> d2c5970379022a3fcaa074037e6aaf50fe743f70
+
     }else{
         inputSenhaCadastro.style.border = "";
         inputSenhaCadastro.parentElement.querySelector('.error-message').textContent = '';
     }
 
-<<<<<<< HEAD
+
     if (nome.length > 2 && emailCadastro && SenhaCadastro) {
-=======
-    if (nome && emailCadastro && SenhaCadastro) {
->>>>>>> d2c5970379022a3fcaa074037e6aaf50fe743f70
+
+
         buttonCadastro.setAttribute('disabled', 'true')
         buttonCadastro.innerHTML = `
             <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
@@ -92,7 +58,6 @@ let formCadastro = document.querySelector('#formCadastro').addEventListener('sub
             </svg>
         `;
 
-<<<<<<< HEAD
         fetch('processar_cadastro.php',{
             method: 'POST',
             body: new URLSearchParams(new FormData(document.querySelector('#formCadastro')))    //pegar os dados do form
@@ -123,17 +88,3 @@ let formCadastro = document.querySelector('#formCadastro').addEventListener('sub
 
 })
 
-
-=======
-        setTimeout(function removerAnimação(){
-            
-            buttonCadastro.innerHTML = 'ENVIAR';
-            buttonCadastro.removeAttribute('disabled');
-
-            document.querySelector('#formCadastro').submit();
-        }, 2500)
-    }
-
-
-})
->>>>>>> d2c5970379022a3fcaa074037e6aaf50fe743f70
