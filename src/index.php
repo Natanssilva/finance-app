@@ -34,9 +34,10 @@
                         <img class="hide-password" src="../images/icons8-hide-password-30.png" alt="hide-password">
                         <img class="show-password hidden" src="../images/icons8-show-password-30.png" alt="show-password">
                     </div>
+                    <p class=" fixed error-message text-red-700"></p>
+
                 </div>
-                
-                <p class="error-message text-red-700"></p>
+               
             </div>
             <div class="text-center">
             <button id="button-submit" type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-full py-2">Entrar</button>

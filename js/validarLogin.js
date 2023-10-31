@@ -30,11 +30,11 @@ let form = document.querySelector('#form').addEventListener('submit', function e
   if (senha.trim() === '' || senha.length <= 2) {
 
     InputSenha.style.border = "1px solid red";
-    InputSenha.parentElement.querySelector('.error-message').textContent = 'Digite uma senha válida';
+    InputSenha.textContent = 'Digite uma senha válida';
 
   } else {
     InputSenha.style.border = "";
-    InputSenha.parentElement.querySelector('.error-message').textContent = '';
+    erro.textContent = '';
   }
 
   if (email && senha) {
