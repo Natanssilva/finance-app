@@ -11,8 +11,8 @@
         //receber a chave de recuperação via post pelo AJAX
       if (isset($_POST['chave'])) {
             $chave_recuperacao = $_POST['chave'];
-            
 
+           
             if (empty($chave_recuperacao)) {
     
                 $response = [
@@ -31,19 +31,32 @@
 
                 $resultado_verificar_chave = $stmt -> fetch();
 
-                //update nova senha (BUG)
+                if ($resultado_verificar_chave ->rowCount() === 0) {
+                    echo "<h1>ERRO LINK ALTERADO";
+                    die();
+                }
+
                if ($dadosAtualizarSenha) {
                     $senhaAtualizada = password_hash($dadosAtualizarSenha['SenhaAtualizada'], PASSWORD_DEFAULT);
-                    $id_user = $resultado_verificar_chave['id_user'];
+                    $id_usuario = $resultado_verificar_chave['id_user'];
                    
                     $query_update_senha = "UPDATE usuarios 
                                            SET senha = :senha_usuario 
-                                           WHERE id = :id_user LIMIT 1;";
-                    
+                                           WHERE id_user = :id_user; LIMIT 1";
+                    showArray($query_update_senha);
                     $preparedStmt = $ligacao->prepare($query_update_senha);
                     $preparedStmt->bindParam(':senha_usuario', $senhaAtualizada);
-                    $preparedStmt->bindParam(':id_user', $id_user);
-                    $preparedStmt ->execute();
+                    $preparedStmt->bindParam(':id_user', $id_usuario);
+                    
+                    if ($preparedStmt ->execute()) {
+                        //response pra retornar pro ajax q a senha foi alterada
+                        $response = [
+                            'status' => 'mov',
+                            'message' => 'senha alterada com sucesso', 
+                            'redirect' => 'index.php'
+                        ];
+                    }
+                    
                }
 
                 
