@@ -17,6 +17,6 @@ Esse projeto servirá pra estudar e consolidar conhecimentos em MySQL, PHP, java
 
 
 # Features a serem implementadas:
-    - Hide and Show Password no Input (JS)
     - Código 6 digitos verificação
+    - Modal / Alerts de acordo com validações ajax server side
 
