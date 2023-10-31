@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <script src="../js/validarCadastro.js" defer></script>
+    <script src="../js/main.js" defer></script>
 </head>
 <?php require_once 'connect.php' ?>
 <body class="bg-gray-800 min-h-screen flex items-center justify-center">
@@ -27,10 +28,15 @@
                 <input type="email" id="emailCadastro" name="emailCadastro" class="border rounded w-full py-2 px-3" placeholder="seuemail@exemplo.com">
                 <p class="error-message text-red-700"></p>
             </div>
-            <div class="mb-6">
+            <div class="relative rounded-md shadow-sm mb-6">
                 <label for= "senha" class="block text-gray-700 text-sm font-semibold mb-2">Senha</label>
-                <input type="password" id="senhaCadastro" name="senhaCadastro" class="border rounded w-full py-2 px-3" placeholder="********">
+                <input type="password" id="senhaCadastro" name="senhaCadastro" class="senha border rounded w-full py-2 px-3" placeholder="********">
+                <div class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer mt-6">
+                        <img class="hide-password" src="../images/icons8-hide-password-30.png" alt="hide-password">
+                        <img class="show-password hidden" src="../images/icons8-show-password-30.png" alt="show-password">
+                </div>
                 <p class="error-message text-red-700"></p>
+                
             </div>
             <button id="buttonCadastro" type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-full py-2">Cadastrar</button>
             <p class="cadastro-error text-red-700"></p>

@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <script src="../js/validarLogin.js" defer></script>
+    <script src="../js/main.js" defer></script>
     
 </head>
 <?php require_once 'connect.php' ?>
@@ -24,9 +25,17 @@
 
                 <p class="error-message text-red-700"></p>
             </div>
-            <div class="mb-6">
+            <div class="mb-6 relative">
                 <label for="senha" class="block text-gray-700 text-sm font-semibold mb-2">Senha</label>
-                <input type="password" id="senha" name="senha" class="border rounded w-full py-2 px-3" placeholder="********">
+                
+                <div class="relative rounded-md shadow-sm">
+                    <input type="password" id="senha" name="senha" class="senha py-2 px-3 block w-full border rounded w-full py-2 px-3" placeholder="********">
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer">
+                        <img class="hide-password" src="../images/icons8-hide-password-30.png" alt="hide-password">
+                        <img class="show-password hidden" src="../images/icons8-show-password-30.png" alt="show-password">
+                    </div>
+                </div>
+                
                 <p class="error-message text-red-700"></p>
             </div>
             <div class="text-center">
