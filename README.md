@@ -16,9 +16,7 @@ Esse projeto servirá pra estudar e consolidar conhecimentos em MySQL, PHP, java
     - Versionamento de código: GIT 
 
 
-# Features a serem implementadas ou Bugs para corrigir:
-    - "Esqueceu senha?" com email recebido no Gmail enviado
-    - Login/Cadastro com conta de outros sites, como por ex Github e google
-    - verificar validações
-    - Criar home do usuário
+# Features a serem implementadas:
+    - Hide and Show Password no Input (JS)
+    - Código 6 digitos verificação
 
