@@ -14,6 +14,7 @@ Esse projeto servirá pra estudar e consolidar conhecimentos em MySQL, PHP, java
 # Tecnologias usadas no projeto 
     - No desenvolvimento : PHP, JS, HTML,CSS e MySQL
     - Versionamento de código: GIT 
+    - Componentes: DaisyUI
 
 
 # Features a serem implementadas:
