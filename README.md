@@ -13,10 +13,21 @@ Esse projeto servirá pra estudar e consolidar conhecimentos em MySQL, PHP, java
 
 # Tecnologias usadas no projeto 
     - No desenvolvimento : PHP, JS, HTML,CSS e MySQL
+    - FrameWorks e Bibliotecas:
+        - Tailwind CSS
+        - DaisyUI
+        - Tailwind UI
+        - PHP Mailer
+        - ScrollReveal Js
     - Versionamento de código: GIT 
 
 
 # Features a serem implementadas:
     - Código 6 digitos verificação
     - Modal / Alerts de acordo com validações ajax server side
+
+
+# Bugs a serem corrigidos:
+    - URL de recuperação de senha, Not Found (PHP)
+    - index.html precisa da section About Us e o ScrollReveal
 
