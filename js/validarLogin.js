@@ -1,6 +1,4 @@
-let form = document
-  .querySelector("#form")
-  .addEventListener("submit", function enviarForm(event) {
+let form = document.querySelector("#form").addEventListener("submit", function enviarForm(event) {
     event.preventDefault(); // Pausa o evento de envio
 
     const buttonLogin = document.querySelector("#button-submit");
@@ -9,25 +7,25 @@ let form = document
 
     let email = InputEmail.value;
     let senha = InputSenha.value;
-    let erro = document.querySelector(".error-message");
-    let erroLogin = document.querySelector(".erro-login");
+    let erroEmail = document.querySelector(".error-message");
+    let erroSenha = document.querySelector(".erro-login");
     const regexLogin = /[,\;!?\[\]{}()#$%^&*]/;
 
     // Validando login
     if (email.trim() === "" || email.length <= 4 || regexLogin.test(email)) {
       InputEmail.style.border = "1px solid red";
-      erro.textContent = "Email inválido";
+      erroEmail.textContent = "Email inválido";
     } else {
       InputEmail.style.border = "";
-      erro.textContent = "";
+      erroEmail.textContent = "";
     }
 
     if (senha.trim() === "" || senha.length <= 2) {
       InputSenha.style.border = "1px solid red";
-      InputSenha.textContent = "Digite uma senha válida";
+      erroSenha.textContent = "Digite uma senha válida";
     } else {
       InputSenha.style.border = "";
-      erro.textContent = "";
+      erroSenha.textContent = "";
     }
 
     if (email && senha) {
@@ -61,7 +59,7 @@ let form = document
           } else {
             buttonLogin.innerHTML = "Enviar";
             buttonLogin.removeAttribute("disabled");
-            erroLogin.innerHTML = "Login incorreto. Tente Novamente";
+            erroSenha.innerHTML = "Login incorreto. Tente Novamente";
           }
         });
     }
