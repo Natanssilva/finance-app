@@ -32,7 +32,7 @@
 
                 //link atualizar senha
                 
-                    $link = "http://localhost/finance-app-master/src/atualizar_senha.php?chave=$chave_recuperar_senha";
+                    $link = "http://localhost/finance-app/src/atualizar_senha.php?chave=" . urlencode($chave_recuperar_senha);
                     require __DIR__ . '/../vendor/autoload.php'; //incluir composer
 
                     // Criando uma instância do PHPMailer
