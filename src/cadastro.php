@@ -50,6 +50,7 @@
     </div>
 
     <h1 class="text-2xl text-white text-center absolute top-10 w-full animate__animated animate__backInRight ">Crie uma conta e comece agora mesmo a gerenciar suas finanças !</h1>
+    <div id="alert"></div>
 </body>
 
 </html>

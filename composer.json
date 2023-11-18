@@ -3,7 +3,8 @@
     "description": "my side project finance app web",
     "type": "library",
     "require": {
-        "phpmailer/phpmailer": "^6.8"
+        "phpmailer/phpmailer": "^6.8",
+        "google/apiclient": "^2.15"
     },
     "license": "MIT License",
     "autoload": {
