@@ -1,6 +1,8 @@
 <?php
 require '../vendor/autoload.php'; // Carrega a biblioteca do Google API Client
 
+session_start();
+
 $client = new Google_Client();
 $client->setClientId('475090256871-duu195bffbhq80ub6rs39e10pd4ts2jp.apps.googleusercontent.com');
 $client->setClientSecret('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');

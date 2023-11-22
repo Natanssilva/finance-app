@@ -9,7 +9,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <script src="../js/validarLogin.js" defer></script>
     <script src="../js/main.js" defer></script>
-    <script src="../js/authentic_google.js" defer></script>
 
 </head>
 <?php require_once 'connect.php' ?>
@@ -46,7 +45,10 @@
                 <button id="button-submit" type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-full py-2">Entrar</button>
             </div>
             <div class="text-center mt-4">
-                <button id="entrarGoogle" class="btn bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-full py-2 flex items-center justify-center"><img src="../images/google-icon-2048x2048-czn3g8x8.png" alt="Google Logo" class="w-6 h-6 mr-2"> Entrar com Google</button>
+                <a href="<?= 'api_google.php' ?>" class="btn bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-full py-2 flex items-center justify-center">
+                    <img src="../images/google-icon-2048x2048-czn3g8x8.png" alt="Google Logo" class="w-6 h-6 mr-2">
+                    Entrar com Google
+                </a>
             </div>
 
         </form>
@@ -56,18 +58,6 @@
         <div class="mt-4">
             <p class="text-gray-600 px-2 ">Novo por aqui? <a href="cadastro.php" class="hover:underline text-blue-500">Crie uma conta agora</a></p>
         </div>
-
-
-        <dialog id="my_modal_3" class="modal">
-            <div class="modal-box">
-                <form method="dialog">
-                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-
-                </form>
-
-            </div>
-        </dialog>
-
     </div>
 
 </body>
