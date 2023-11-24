@@ -1,31 +1,41 @@
 <?php
-session_start();
+// session_start();
 
 require '../vendor/autoload.php'; // Carrega a biblioteca do Google API Client
 require_once '../src/biblioteca/funcoes.php';
 
-
+// $params = [];
 
 $client = new Google_Client();
 $client->setClientId('475090256871-duu195bffbhq80ub6rs39e10pd4ts2jp.apps.googleusercontent.com');
 $client->setClientSecret('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');
 $client->setRedirectUri('http://localhost/finance-app/src/home.php');
-
-$client->addScope('email'); // Adicione os escopos necessários
-
-
-$authUrl = $client->createAuthUrl();
+$client->revokeToken();
+// showArray($client);exit;
 
 
-if (isset($_GET['code'])) {
-    $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
-    $client->setAccessToken($token);
 
-    // Agora você pode usar $client para fazer solicitações à API do Google
-    $userInfo = $client->verifyIdToken();
+$client->addScope('https://www.googleapis.com/auth/userinfo.profile'); 
+// showArray($client);exit;
 
-} else {
-    // Redirecione o usuário para a URL de autorização
-    header('Location: ' . $authUrl);
+
+// $params = $_GET['code'];
+
+
+if (!isset($_GET['code'])) {
+    $authUrl = $client->createAuthUrl();
+    $params = [
+        'response_type' => 'code',
+        'client_id' => $client->getClientId(),
+        'redirect_uri' => $client->getRedirectUri(),
+        'scope' =>implode(' ', $client->getScopes())  
+    ];
+
+    // showArray($params);exit;
+
+    header("Location: " . $authUrl . '?'. http_build_query($params));
     exit;
+}else{
+
 }
+
