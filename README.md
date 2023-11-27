@@ -28,6 +28,6 @@ Esse projeto servirá pra estudar e consolidar conhecimentos em MySQL, PHP, java
 
 
 # Bugs a serem corrigidos:
-    - URL de recuperação de senha, Not Found (PHP)
-    - index.html precisa da section About Us e o ScrollReveal
+    - Entrar com o Google API
+    
 
