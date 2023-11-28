@@ -23,8 +23,9 @@ Esse projeto servirá pra estudar e consolidar conhecimentos em MySQL, PHP, java
 
 
 # Features a serem implementadas:
-    - Código 6 digitos verificação
     - Modal / Alerts de acordo com validações ajax server side
+    - login com conta google
+    - section de pagamento versão premium, API 
 
 
 # Bugs a serem corrigidos:
