@@ -14,13 +14,14 @@ $client->setRedirectUri($redirectUri);
 
 $client->addScope('https://www.googleapis.com/auth/userinfo.profile'); 
 
-if (!isset($_GET['code'])) {
+if (!isset($_GET['code'])) {  //login com google
     $authUrl = $client->createAuthUrl();
-
     header("Location: " . $authUrl);
-
     exit;
-}else{
+}else{ // após o usuario ser redirecionado
+    $code = $_GET['code'];
+
+    $token = $client->fetchAccessTokenWithAuthCode($code); //token de acesso do usuario logado
 
 }
 
