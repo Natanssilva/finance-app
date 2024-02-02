@@ -3,8 +3,9 @@ module.exports = {
   content: ['./src/**/*.html', './src/**/*.php'],
   theme: {
     extend: {
-      backgroundColor: {
-        'custom-green': '#32632C',
+      colors: {
+        mygreen: '#32632C',
+        greenHover: '#9DCE97',
       },
     },
   },
